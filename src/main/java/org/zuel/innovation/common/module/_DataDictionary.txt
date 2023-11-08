@@ -1,0 +1,75 @@
+Table: bill
+-----------------------------------+--------------+------+-----+---------+---------
+ Field                             | Type         | Null | Key | Default | Remarks 
+-----------------------------------+--------------+------+-----+---------+---------
+ id                                | VARCHAR(255) | NO   | PRI |         |         
+ is_deleted                        | VARCHAR(255) | YES  |     |         |         
+ name                              | VARCHAR(255) | YES  |     |         |         
+ identification                    | VARCHAR(255) | YES  |     |         |         
+ sum_lesson                        | VARCHAR(255) | NO   |     |         |         
+ sum_lesson_time                   | VARCHAR(255) | NO   |     |         |         
+ sum_morning_lesson                | VARCHAR(255) | NO   |     |         |         
+ sum_evening_lesson                | VARCHAR(255) | NO   |     |         |         
+ most_buliding                     | VARCHAR(255) | NO   |     |         |         
+ most_buliding_lesson              | VARCHAR(255) | NO   |     |         |         
+ most_classroom                    | VARCHAR(255) | NO   |     |         |         
+ most_classroom_lesson             | VARCHAR(255) | NO   |     |         |         
+ most_consume_money_canteen        | VARCHAR(255) | NO   |     |         |         
+ most_consume_canteen_money        | VARCHAR(255) | NO   |     |         |         
+ sum_charge                        | VARCHAR(255) | NO   |     |         |         
+ most_consume_money_canteen_date   | VARCHAR(255) | NO   |     |         |         
+ most_consume_money_canteen_oneday | VARCHAR(255) | NO   |     |         |         
+ sum_web_time                      | VARCHAR(255) | NO   |     |         |         
+ sum_web_flow                      | VARCHAR(255) | NO   |     |         |         
+ longest_web_use_timestamp         | VARCHAR(255) | NO   |     |         |         
+ longest_web_use                   | VARCHAR(255) | NO   |     |         |         
+ lastest_web_login                 | VARCHAR(255) | NO   |     |         |         
+ library_appointment_time          | VARCHAR(255) | NO   |     |         |         
+ library_appointment_time_rank     | VARCHAR(255) | NO   |     |         |         
+ sum_appointment                   | VARCHAR(255) | NO   |     |         |         
+ sum_appointment_rank              | VARCHAR(255) | NO   |     |         |         
+ end_achievement                   | VARCHAR(255) | NO   |     | 1       |         
+-----------------------------------+--------------+------+-----+---------+---------
+
+Table: login_info
+----------------+---------------------+------+-----+---------------------+---------
+ Field          | Type                | Null | Key | Default             | Remarks 
+----------------+---------------------+------+-----+---------------------+---------
+ id             | BIGINT UNSIGNED(20) | NO   | PRI |                     | 自增主键    
+ created_time   | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 创建时间    
+ updated_time   | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 更新时间    
+ is_deleted     | TINYINT UNSIGNED(3) | NO   |     | 0                   | 是否删除（0-没有删除；1-已经删除）
+ account        | VARCHAR(128)        | NO   |     |                     | 学号      
+ session_id     | BIGINT UNSIGNED(20) | NO   |     |                     | 用户session id
+ ip_address     | VARCHAR(50)         | NO   |     |                     | 登录ip    
+ login_location | VARCHAR(255)        | NO   |     |                     | 登录地址    
+ browser        | VARCHAR(50)         | NO   |     |                     | 浏览器类型   
+ os             | VARCHAR(50)         | NO   |     |                     | 操作系统    
+ status         | TINYINT UNSIGNED(3) | NO   |     |                     | 登录状态 1-成功；2-失败
+----------------+---------------------+------+-----+---------------------+---------
+
+Table: session
+--------------+---------------------+------+-----+---------------------+---------
+ Field        | Type                | Null | Key | Default             | Remarks 
+--------------+---------------------+------+-----+---------------------+---------
+ id           | BIGINT UNSIGNED(20) | NO   | PRI |                     | 自增主键    
+ created_time | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 创建时间    
+ updated_time | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 更新时间    
+ is_deleted   | TINYINT UNSIGNED(3) | NO   |     | 0                   | 是否删除（0-没有删除；1-已经删除）
+ user_id      | VARCHAR(128)        | NO   |     |                     | 学号      
+ session_id   | VARCHAR(32)         | NO   |     |                     | 统一认证信息  
+ type         | TINYINT UNSIGNED(3) | NO   |     |                     | 登录类型    
+ sex          | TINYINT UNSIGNED(3) | NO   |     | 0                   |         
+--------------+---------------------+------+-----+---------------------+---------
+
+Table: student
+--------------+---------------------+------+-----+---------------------+---------
+ Field        | Type                | Null | Key | Default             | Remarks 
+--------------+---------------------+------+-----+---------------------+---------
+ id           | BIGINT UNSIGNED(20) | NO   | PRI |                     | 自增主键    
+ created_time | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 创建时间    
+ updated_time | TIMESTAMP(19)       | NO   |     | 0000-00-00 00:00:00 | 更新时间    
+ is_deleted   | TINYINT UNSIGNED(3) | NO   |     |                     | 是否删除（0-没有删除；1-已经删除）
+ account      | VARCHAR(128)        | NO   |     |                     | 学号      
+--------------+---------------------+------+-----+---------------------+---------
+
